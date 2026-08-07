@@ -2,11 +2,11 @@
 
 Welcome to the first coding repository for CMSE 802.
 
-At first glance, this repository appears to be about drawing a colorful triangle. In reality, it is about something much more important; **how research software evolves**.
+At first glance, this repository appears to be about drawing a colorful triangle. In practice, it is about something more important: **how research software evolves**.
 
-The triangle gives us a small, visual example that we can understand completely. Because the example is simple, we can focus our attention on the software instead of getting lost in complicated mathematics or domain-specific details.
+The triangle gives us a small visual example we can understand completely. Because the example is simple, we can focus on software design instead of getting lost in domain details.
 
-Over the next few notebooks, you will start with a working script and gradually transform it into a reusable software tool. Along the way, we will explore many of the same practices used in larger scientific software projects.
+Across three notebooks, you will start with a working script and gradually transform it into a reusable software tool.
 
 ## A model of models
 
@@ -16,32 +16,7 @@ Throughout this course, we will discuss three common components found in computa
 - Physical
 - Data-Driven
 
-These are not separate categories. Most real-world research projects contain some mixture of all three.
-
-For example:
-
-Analytical components may include:
-
-- equations
-- symbolic mathematics
-- optimization objectives
-- mathematical constraints
-
-Physical components may include:
-
-- simulation
-- finite differences
-- iterative processes
-- numerical methods
-
-Data-driven components may include:
-
-- parameter fitting
-- statistics
-- machine learning
-- artificial intelligence
-
-One way to think about a model is as a combination of these three ingredients.
+These are not separate categories. Most real research projects contain a mixture of all three.
 
 We can represent that idea mathematically:
 
@@ -65,23 +40,15 @@ In this repository we use color as a visual metaphor:
 * Green -> Physical
 * Blue  -> Data-Driven
 
-Every location inside the triangle represents a different combination of these three components.
+Every location inside the triangle represents a different component mixture.
 
-- A point near the red corner represents a model with a strong analytical component.
-
-- A point near the green corner represents a model with a strong physical component.
-
-- A point near the blue corner represents a model with a strong data-driven component.
-
-- A point near the center contains some mixture of all three.
-
-We will be introdcing a lot of modeling methods and techniques. Later in the semester we will think about how these models fall in our trinagle. 
+We will introduce many modeling methods later in the semester. This triangle helps us discuss where methods and projects may fall in that space.
 
 [Insert Example Triangle Figure Here]
 
 ## Why Start Here?
 
-Many students enter graduate school with some programming experience, but relatively little experience thinking about software as an evolving artifact.
+Many students enter graduate school with programming experience, but less experience treating software as an evolving artifact.
 
 A common pattern in research looks something like:
 
@@ -101,7 +68,7 @@ This repository follows that progression.
 
 Rather than building a large project from scratch, we will use a small example to practice the habits that support high-quality research software.
 
-## Sceintific Software Engineering Principles
+## Scientific Software Engineering Principles
 
 Throughout CMSE 802 we will revisit five qualities of scientific software:
 
@@ -123,9 +90,9 @@ When you modify code, ask:
 - Does this make the software more robust?
 - Does this make the code easier for another person to understand?
 
-The exercises in this repository are designed to make those questions concrete.
+The exercises in this repository make those questions concrete.
 
-# Learning Goals
+## Learning Goals
 
 By the end of this repository, you should be able to:
 
@@ -140,7 +107,7 @@ By the end of this repository, you should be able to:
 - improve code quality using automated tools
 - explain how software engineering supports scientific research
 
-# Repository Structure
+## Repository Structure
 
 ## Notebook 01: Model Triangle
 
@@ -150,25 +117,15 @@ Start with a working script that generates a barycentric RGB triangle. You will 
 
 Refactor the original script into a reusable Python module.
 
-Topics include:
-
-- functions
-- imports
-- code reuse
-- organization
+Topics include functions, imports, code reuse, and organization.
 
 ## Notebook 03: Improving Software
 
 Introduce tools that help improve software quality.
 
-Topics include:
+Topics include Git, Ruff, formatting, and software improvement workflows.
 
-- Git
-- Ruff
-- formatting
-- software improvement workflows
-
-## SUGGESTED LEARNING FLOW
+## Suggested Learning Flow
 
 Work through the notebooks in order.
 
@@ -178,15 +135,29 @@ Work through the notebooks in order.
 
 Each notebook builds on the work completed in the previous notebook.
 
-# Optional Quick Start
+## Optional Quick Start
 
-An ```enviornment.yml``` file is included so you can create a repository with all of the necessary files.  This particular repository only uses ```numpy```, ```matplotlib``` and ```ruff```.  You may not need to install anything. However you can use the following command to create the environment:
+An `environment.yml` file is included for a reproducible setup. The environment contains Python, NumPy, Matplotlib, JupyterLab, and Ruff.
+
+If your local setup already works, using this environment is optional. Otherwise, create it with:
 
 ```bash
 conda env create -f environment.yml
 ```
 
-# Notes for students
+Activate it with:
+
+```bash
+conda activate modeling-intro
+```
+
+If you need Ruff only, you can also install it directly:
+
+```bash
+pip install ruff
+```
+
+## Notes for Students
 
 As you work through the repository:
 
