@@ -1,5 +1,8 @@
 # Modeling Intro
 
+![Example Barycentric Triangle](./Example.png)
+
+
 Welcome to the first coding repository for CMSE 802.
 
 At first glance, this repository appears to be about drawing a colorful triangle. In practice, it is about something more important: **how research software evolves**.
@@ -42,9 +45,8 @@ In this repository we use color as a visual metaphor:
 
 Every location inside the triangle represents a different component mixture.
 
-We will introduce many modeling methods later in the semester. This triangle helps us discuss where methods and projects may fall in that space.
+We will introduce many modeling methods later in the semester. The triangle modle helps us discuss where methods and projects may fall in that space.
 
-[Insert Example Triangle Figure Here]
 
 ## Why Start Here?
 
@@ -174,3 +176,27 @@ Most importantly:
 - Improve it in small steps.
 - Preserve behavior while improving readability, reuse, and portability.
 
+# Help Improve this repository
+
+This repository is part of an ongoing open educational resource project.
+
+If you find:
+
+    - a typo
+    - a bug
+    - an error in the instructions
+    - a confusing explanation
+    - a missing step
+    - an idea for improvement
+
+please consider opening a GitHub Issue.
+
+Professional software projects improve through feedback, and submitting issues is an important software engineering skill.
+
+You do not need to know how to fix a problem in order to report it.
+
+In fact, identifying and clearly describing problems is often one of the most valuable contributions a user can make.
+
+Throughout the semester, feel free to submit issues to any course repository.
+
+Your feedback helps improve the materials for future students.
