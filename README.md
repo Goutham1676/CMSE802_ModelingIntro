@@ -1,11 +1,11 @@
 # Modeling Intro
 
-![Example Barycentric Triangle](./Example.png)
-
-
 Welcome to the first coding repository for CMSE 802.
 
 At first glance, this repository appears to be about drawing a colorful triangle. In practice, it is about something more important: **how research software evolves**.
+
+![Example Barycentric Triangle](./Example.png)
+
 
 The triangle gives us a small visual example we can understand completely. Because the example is simple, we can focus on software design instead of getting lost in domain details.
 
