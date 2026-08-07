@@ -194,12 +194,12 @@ This repository is part of an ongoing open educational resource project.
 
 If you find:
 
-    - a typo
-    - a bug
-    - an error in the instructions
-    - a confusing explanation
-    - a missing step
-    - an idea for improvement
+- a typo
+- a bug
+- an error in the instructions
+- a confusing explanation
+- a missing step
+- an idea for improvement
 
 please consider opening a GitHub Issue.
 
