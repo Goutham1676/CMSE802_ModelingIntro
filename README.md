@@ -11,6 +11,18 @@ The triangle gives us a small visual example we can understand completely. Becau
 
 Across three notebooks, you will start with a working script and gradually transform it into a reusable software tool.
 
+## Recommended: Fork This Repository
+
+If you have a GitHub account, consider creating a fork of this repository before starting.
+
+Working in your own fork allows you to:
+
+- save your work to GitHub
+- keep your edits after the course
+- build a portfolio of examples and projects
+
+You are welcome to work directly from a local clone, but many students find that maintaining a personal fork is a useful habit for long-term project development.
+
 ## A model of models
 
 Throughout this course, we will discuss three common components found in computational models:
