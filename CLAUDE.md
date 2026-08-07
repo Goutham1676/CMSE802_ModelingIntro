@@ -6,7 +6,7 @@ Can I delete this?
 - Optional.
 - Keep if your team uses Claude and wants zero-setup repository-specific guidance.
 
-Use `guides/ai-policy.md` as canonical policy.
+Use `ai-policy.md` as canonical policy.
 Use `AGENTS.md` for operational workflow.
 
 - Prefer existing repository tooling.
