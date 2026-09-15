@@ -1,5 +1,5 @@
-import numpy as np
 import matplotlib.pyplot as plt
+import numpy as np
 
 
 def point_triangle(p, a, b, c):
@@ -77,7 +77,6 @@ def plot_triangle(width=800, height=700, border=10,
     green_point = np.array([border * 4, height - border * 4])
     blue_point = np.array([width - border * 4, height - border * 4])
 
-    ...
 
     max_dist = max(
         np.linalg.norm(red_point - green_point),
