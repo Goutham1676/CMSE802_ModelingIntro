@@ -1,7 +1,28 @@
 import numpy as np
 import matplotlib.pyplot as plt
 
+
 def point_triangle(p, a, b, c):
+    """
+    Determine whether a point lies inside a triangle.
+
+    Parameters
+    ----------
+    p : numpy.ndarray
+        Point to test.
+    a : numpy.ndarray
+        First triangle vertex.
+    b : numpy.ndarray
+        Second triangle vertex.
+    c : numpy.ndarray
+        Third triangle vertex.
+
+    Returns
+    -------
+    bool
+        True if the point lies inside or on the boundary of the
+        triangle, otherwise False.
+    """
     v0 = c - a
     v1 = b - a
     v2 = p - a
@@ -21,13 +42,42 @@ def point_triangle(p, a, b, c):
 
 
 def plot_triangle(width=800, height=700, border=10,
-                  point=(630, 500), point_label="My Research"):
+                  point=(550, 500), point_label="My Research"):
+    """
+    Generate and display a color triangle visualization.
 
+    A triangular RGB color space is created where colors are
+    interpolated from the three triangle vertices. A user-defined
+    point and label are then overlaid on the plot.
+
+    Parameters
+    ----------
+    width : int, optional
+        Width of the image in pixels. Default is 800.
+    height : int, optional
+        Height of the image in pixels. Default is 700.
+    border : int, optional
+        Margin between the triangle and image boundaries.
+        Default is 10.
+    point : tuple, optional
+        Coordinates of the point to display on the triangle.
+        Default is (550, 500).
+    point_label : str, optional
+        Label displayed beside the point.
+        Default is "My Research".
+
+    Returns
+    -------
+    None
+        Displays the triangle plot.
+    """
     image = np.ones((height, width, 3), dtype=float)
 
     red_point = np.array([width / 2, border * 4])
     green_point = np.array([border * 4, height - border * 4])
     blue_point = np.array([width - border * 4, height - border * 4])
+
+    ...
 
     max_dist = max(
         np.linalg.norm(red_point - green_point),
@@ -35,7 +85,7 @@ def plot_triangle(width=800, height=700, border=10,
         np.linalg.norm(green_point - blue_point),
     )
 
-    # --- Generate triangle image ---
+    #  Generate triangle image 
     for y in range(height):
         for x in range(width):
             p = np.array([x, y])
@@ -54,7 +104,7 @@ def plot_triangle(width=800, height=700, border=10,
 
                 image[y, x] = color
 
-    # --- Plot everything (correct indentation!) ---
+    #  Plot
     plt.figure(figsize=(8, 7))
     plt.imshow(image)
 
@@ -74,3 +124,5 @@ def plot_triangle(width=800, height=700, border=10,
     plt.show()
 
     # return image, red_point, green_point, blue_point (indentated if the image is not needed outside function
+    
+plot_triangle()
