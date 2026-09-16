@@ -41,14 +41,20 @@ def point_triangle(p, a, b, c):
     return (u >= 0) and (v >= 0) and (u + v <= 1)
 
 
-def plot_triangle(width=800, height=700, border=10,
-                  point=(550, 500), point_label="My Research"):
+def plot_point(point=(550, 500), point_label="My Research"):
+    """Plot and label a point on the triangle."""
+    px, py = point
+
+    plt.scatter(px, py, c="black", s=100, label=point_label)
+    plt.text(px + 15, py + 15, point_label,
+             fontsize=12, fontfamily="serif",
+             fontweight="bold")
+
+
+def plot_triangle(width=800, height=700, border=10, point=(550, 500), point_label="My Research",
+                  filename=None):
     """
     Generate and display a color triangle visualization.
-
-    A triangular RGB color space is created where colors are
-    interpolated from the three triangle vertices. A user-defined
-    point and label are then overlaid on the plot.
 
     Parameters
     ----------
@@ -65,6 +71,8 @@ def plot_triangle(width=800, height=700, border=10,
     point_label : str, optional
         Label displayed beside the point.
         Default is "My Research".
+    filename : str, optional
+        Filename used to save the figure.
 
     Returns
     -------
@@ -77,14 +85,13 @@ def plot_triangle(width=800, height=700, border=10,
     green_point = np.array([border * 4, height - border * 4])
     blue_point = np.array([width - border * 4, height - border * 4])
 
-
     max_dist = max(
         np.linalg.norm(red_point - green_point),
         np.linalg.norm(red_point - blue_point),
         np.linalg.norm(green_point - blue_point),
     )
 
-    #  Generate triangle image 
+    # Generate triangle image
     for y in range(height):
         for x in range(width):
             p = np.array([x, y])
@@ -103,25 +110,34 @@ def plot_triangle(width=800, height=700, border=10,
 
                 image[y, x] = color
 
-    #  Plot
+    # Plot
     plt.figure(figsize=(8, 7))
     plt.imshow(image)
 
     plt.text(red_point[0], red_point[1] - 20, "Physical",
-             fontsize=12, fontweight='bold', fontfamily='serif', ha='center')
-    plt.text(green_point[0] - 25, green_point[1] + 20, "Analytical",
-             fontsize=12, fontweight='bold', fontfamily='serif', ha='center')
-    plt.text(blue_point[0] + 25, blue_point[1] + 20, "Data-driven",
-             fontsize=12, fontweight='bold', fontfamily='serif', ha='center')
+             fontsize=12, fontweight="bold",
+             fontfamily="serif", ha="center")
 
-    px, py = point
-    plt.scatter(px, py, c='black', s=100, label=point_label)
-    plt.text(px + 15, py + 15, point_label,
-             fontsize=12, fontfamily='serif', fontweight='bold')
+    plt.text(green_point[0] - 25, green_point[1] + 20, "Analytical",
+             fontsize=12, fontweight="bold",
+             fontfamily="serif", ha="center")
+
+    plt.text(blue_point[0] + 25, blue_point[1] + 20, "Data-driven",
+             fontsize=12, fontweight="bold",
+             fontfamily="serif", ha="center")
+
+    plot_point(point, point_label)
 
     plt.axis("off")
+
+    if filename:
+        plt.savefig(filename, bbox_inches="tight")
+
     plt.show()
 
-    # return image, red_point, green_point, blue_point (indentated if the image is not needed outside function
-    
-plot_triangle()
+
+if __name__ == "__main__":
+    import sys
+
+    filename = sys.argv[1] if len(sys.argv) > 1 else None
+    plot_triangle(filename=filename)
