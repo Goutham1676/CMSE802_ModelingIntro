@@ -46,13 +46,24 @@ def plot_point(point=(550, 500), point_label="My Research"):
     px, py = point
 
     plt.scatter(px, py, c="black", s=100, label=point_label)
-    plt.text(px + 15, py + 15, point_label,
-             fontsize=12, fontfamily="serif",
-             fontweight="bold")
+    plt.text(
+        px + 15,
+        py + 15,
+        point_label,
+        fontsize=12,
+        fontfamily="serif",
+        fontweight="bold",
+    )
 
 
-def plot_triangle(width=800, height=700, border=10, point=(550, 500), point_label="My Research",
-                  filename=None):
+def plot_triangle(
+    width=800,
+    height=700,
+    border=10,
+    point=(550, 500),
+    point_label="My Research",
+    filename=None,
+):
     """
     Generate and display a color triangle visualization.
 
@@ -114,17 +125,35 @@ def plot_triangle(width=800, height=700, border=10, point=(550, 500), point_labe
     plt.figure(figsize=(8, 7))
     plt.imshow(image)
 
-    plt.text(red_point[0], red_point[1] - 20, "Physical",
-             fontsize=12, fontweight="bold",
-             fontfamily="serif", ha="center")
+    plt.text(
+        red_point[0],
+        red_point[1] - 20,
+        "Physical",
+        fontsize=12,
+        fontweight="bold",
+        fontfamily="serif",
+        ha="center",
+    )
 
-    plt.text(green_point[0] - 25, green_point[1] + 20, "Analytical",
-             fontsize=12, fontweight="bold",
-             fontfamily="serif", ha="center")
+    plt.text(
+        green_point[0] - 25,
+        green_point[1] + 20,
+        "Analytical",
+        fontsize=12,
+        fontweight="bold",
+        fontfamily="serif",
+        ha="center",
+    )
 
-    plt.text(blue_point[0] + 25, blue_point[1] + 20, "Data-driven",
-             fontsize=12, fontweight="bold",
-             fontfamily="serif", ha="center")
+    plt.text(
+        blue_point[0] + 25,
+        blue_point[1] + 20,
+        "Data-driven",
+        fontsize=12,
+        fontweight="bold",
+        fontfamily="serif",
+        ha="center",
+    )
 
     plot_point(point, point_label)
 
